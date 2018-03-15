@@ -1,0 +1,24 @@
+
+3) The  program  only  checks  the  sizes  of  regular 
+files.  It does not check the sizes of directories of 
+symbolic   links.   Do   not   include   the   sizes   of 
+directories or symbolic links in the results.  
+6) The  parent  process  needs  to  use  a  structure  to  c
+ontain  the  information  of  each  file,  which  is 
+dynamically allocated when the information is recei
+ved, and use a data structure, such as a linked-
+list,  a  tree,  or  a  hash  table,  to  organize  the  stru
+ctures  of  files.  Using  an  array  to  organize  the 
+information  of  the  files  is  no  suggested,  since  it 
+is  unknown  how  many  files  are  there  in  the 
+directory. 
+7) The parent process needs to sort the files incre
+mentally.  It maintains a sorted list. When new 
+information arrives from the child, it updates the 
+list. In this way, the parent process can provide a
+sorted list immediately after the child process fin
+ishes scanning. This is why the program uses two 
+processes --- the two processes can run in parallel
+ to shorten execution time. If the parent process 
+were to start sorting after the child process finis
+hes, there would be no need to use two processes. 
