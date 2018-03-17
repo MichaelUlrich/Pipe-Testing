@@ -98,7 +98,7 @@ int main(int argc, char * argv[]) {
         if(status == -1) {
                 perror("pipe err"); exit(EXIT_FAILURE);
         }
-pid = fork();
+        pid = fork();
         switch(pid) {
                 case 0:                         //Child Case - Writes to pipe
                         printf("child process\n");
